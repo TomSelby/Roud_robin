@@ -125,7 +125,7 @@ int main() {
     );
 
     //printf("Starting capture\n");
-    adc_run(true);
+    
     int count_index = 0;
 
     while (!do_start)
@@ -135,6 +135,8 @@ int main() {
         count_index++;
         sleep_ms(1000);
     }
+
+    adc_run(true);
     
     //printf("Starting capture\n");
 
@@ -150,7 +152,7 @@ int main() {
     // Print samples to stdout so you can display them in pyplot, excel, matlab
     for (int i = 0; i < CAPTURE_DEPTH; ++i) {
         value = capture_buf[i] ;
-        printf("%x\n", value)
+        printf("%x\n", value) ;
     }
 }
 
