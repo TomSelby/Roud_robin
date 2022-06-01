@@ -1,4 +1,5 @@
 import serial, struct
+import numpy as np
 from time import sleep
 ####
 class PICO_SERIAL:
@@ -104,3 +105,12 @@ while True:
 
 pico.close()
 print('Data points', len(DataList))
+
+# I didnt test/debug this but should work
+array = np.array(DataList)# create a np array with all values in it
+array_I = array[::2]# create an array with only I values in it
+mapped_I=(array_I/np.amax(array_I))*3.3
+array_V  = array [1::2]# create an array with only the V values in it
+mapped_V= (array_V/np.amax(array_V))*3.3
+np.savetxt('Current',mapped_I)
+np.savetxt('Voltage', mapped_V)
