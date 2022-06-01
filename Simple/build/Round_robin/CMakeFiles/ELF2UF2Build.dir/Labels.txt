@@ -1,13 +1,13 @@
 # Target labels
  ELF2UF2Build
 # Source files and their labels
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/CMakeFiles/ELF2UF2Build
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/CMakeFiles/ELF2UF2Build.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/CMakeFiles/ELF2UF2Build-complete.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
-/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/CMakeFiles/ELF2UF2Build
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/CMakeFiles/ELF2UF2Build.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/CMakeFiles/ELF2UF2Build-complete.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/Round_robin/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule

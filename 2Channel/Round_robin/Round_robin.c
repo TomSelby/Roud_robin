@@ -2,14 +2,17 @@
 // buffers.
 
 //#include <Arduino.h>
+#include <stdio.h>
 #include <stdarg.h>
 #include <stdint.h>
+#include <stdbool.h>
 
+#include "pico/stdlib.h"
 #include "hardware/adc.h"
 #include "hardware/dma.h"
 #include "hardware/gpio.h"
 #include "hardware/irq.h"
-#include "hardware/pio.h"
+//#include "hardware/pio.h"
 
 // Diagnostics LEDs.
 // #define LED1_PIN 16
@@ -20,7 +23,7 @@
 #define ADC_CHANNEL_2 2 // current
 
 // define physical parameters
-#define CAPTURE_DEPTH 1666 // 10 cycles
+#define CAPTURE_DEPTH 1024 // 1666 : 10 cycles
 #define ADC_VREF_VOLTAGE 3.3
 // Frequency    : 3 kHz
 // ADC          : 0.5 Ms/s
@@ -47,8 +50,8 @@ static char buffer[200];
 uint dma_chan1;
 uint dma_chan2;
 
-unit_fast16_t irq_counter1 = 0;
-unit_fast16_t irq_counter2 = 0;
+uint_fast16_t irq_counter1 = 0;
+uint_fast16_t irq_counter2 = 0;
 
 // Called when capture_buf1 is full.
 void dma_handler1()
@@ -169,10 +172,10 @@ void main()
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     gpio_put(LED_PIN, 1);
-    printf('Ready\r')
+    printf("Ready\r");
     // now the board is ready to start
-
-    while(true){
+    char ch;
+    while(false){
 
         ch = getchar_timeout_us(0);
 
@@ -190,12 +193,12 @@ void main()
     adc_run(false);
     adc_fifo_drain();
 
-    for (unit_fast16_t i = 0; i < CAPTURE_DEPTH; i++){
+    for (uint_fast16_t i = 0; i < CAPTURE_DEPTH; i++){
 
-    voltage = capture_buf1[i] ;
+    uint16_t voltage = capture_buf1[i] ;
         printf("v%x\r", voltage);
     
-    current = capture_buf2[i] ;
+    uint16_t current = capture_buf2[i] ;
         printf("i%x\r", current);
         }
 }

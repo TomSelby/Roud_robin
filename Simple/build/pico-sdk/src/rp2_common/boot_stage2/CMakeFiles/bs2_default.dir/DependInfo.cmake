@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_ASM
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/mnt/c/Users/lp586/pico/Nanointegration/Roud_robin/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.o"
+  "/home/midas/pico/pico/pico-sdk/src/rp2_common/boot_stage2/compile_time_choice.S" "/home/midas/pico/pico/Nanointegration/Roud_robin/Simple/build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj"
   )
 set(CMAKE_ASM_COMPILER_ID "GNU")
 
@@ -18,14 +18,14 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude"
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/rp2040/hardware_regs/include"
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/rp2_common/hardware_base/include"
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/common/pico_base/include"
+  "/home/midas/pico/pico/pico-sdk/src/rp2_common/boot_stage2/asminclude"
+  "/home/midas/pico/pico/pico-sdk/src/rp2040/hardware_regs/include"
+  "/home/midas/pico/pico/pico-sdk/src/rp2_common/hardware_base/include"
+  "/home/midas/pico/pico/pico-sdk/src/common/pico_base/include"
   "generated/pico_base"
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/boards/include"
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/rp2_common/pico_platform/include"
-  "/mnt/c/Users/lp586/pico/pico-sdk/src/rp2_common/boot_stage2/include"
+  "/home/midas/pico/pico/pico-sdk/src/boards/include"
+  "/home/midas/pico/pico/pico-sdk/src/rp2_common/pico_platform/include"
+  "/home/midas/pico/pico/pico-sdk/src/rp2_common/boot_stage2/include"
   )
 
 # Targets to which this target links.

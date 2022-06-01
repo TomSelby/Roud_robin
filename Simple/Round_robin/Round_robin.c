@@ -62,6 +62,8 @@ double adc_to_voltage(uint16_t read ){
 
 
 int main() {
+    
+    sleep_ms(10000);
     stdio_init_all();
 
     bool do_start = true;
@@ -78,10 +80,19 @@ int main() {
      false, // we don't want a pullup
      true   // only the pulldown (ofc..)
      );
+     
+     //light up the internal LED
+    const uint LED_PIN = PICO_DEFAULT_LED_PIN;
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
+    gpio_put(LED_PIN, 1);
+    printf("Ready\r");
+    sleep_ms(1000);
+    // now the board is ready to start
 
     adc_init();
-    // adc_select_input(CAPTURE_CHANNEL);
-    adc_set_round_robin(0b101); //we are using channels 0 and 2
+    adc_select_input(CAPTURE_CHANNEL);
+    adc_set_round_robin(1 << CAPTURE_CHANNEL | 1 << VOLTAGE_CHANNEL); //we are using channels 0 and 2
                                 //for Signal and Voltage respectively
 
     adc_fifo_setup(
@@ -91,6 +102,13 @@ int main() {
         true,    // to later check error flags
         false    // we want to keep the LSB of the ADC
     );
+    
+    
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
+    gpio_put(LED_PIN, 0);
+    printf("Ready\r");
+    sleep_ms(1000);
 
     // Divisor of 0 -> full speed. Free-running capture with the divider is
     // equivalent to pressing the ADC_CS_START_ONCE button once per `div + 1`
@@ -128,7 +146,7 @@ int main() {
     adc_run(true);
     int count_index = 0;
 
-    while (!do_start)
+    while (false)
     {
         do_start = gpio_get(CONTROL_PIN);
         printf("Hello %d\n", count_index);
@@ -144,18 +162,29 @@ int main() {
     printf("Capture finished\n");
     adc_run(false);
     adc_fifo_drain();
+    
+    printf("\nRes\n");
 
 
-    int value;
+    uint16_t value;
     // Print samples to stdout so you can display them in pyplot, excel, matlab
     for (int i = 0; i < CAPTURE_DEPTH; ++i) {
         value = capture_buf[i] & 0b111111111111;
-        printf("%-4d, ", adc_to_voltage(value)); // data is only in the first 12 bit
-        if (i % 10 == 9)
-            printf("\n");
+        printf("%x\n", value); // data is only in the first 12 bit
+
         if (capture_buf[i] >> 15)
             printf("\n FIFO ERROR at measure %d\n", i);
     }
+    
+    printf("\n Done \n");
+    
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
+    gpio_put(LED_PIN, 1);
+
+    sleep_ms(1000);
+    
+    
 }
 
 // ----------------------------------------------------------------------------

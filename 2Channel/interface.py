@@ -5,7 +5,7 @@ class PICO_SERIAL:
     TERMINATOR = '\r'.encode('UTF8')
 
     def __init__(self, PORT, baudRate, timeout):
-        self.serial = serial.Serial(PORT, baud, timeout=timeout)
+        self.serial = serial.Serial(PORT, baudRate, timeout=timeout)
 
     def receive(self) -> str:
         line = self.serial.read_until(self.TERMINATOR)
@@ -34,7 +34,7 @@ PORT = '/dev/ttyACM0'
 baudRate = 115200
 timeout=.1
 
-with seral.Serial(PORT, baudRate, timeout = timeout) as pico:
+with PICO_SERIAL(PORT, baudRate, timeout = timeout) as pico:
 
     sleep(1)
 
