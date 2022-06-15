@@ -110,7 +110,7 @@ print('Data points', len(DataList))
 array = np.array(DataList)# create a np array with all values in it
 array_I = array[::2]# create an array with only I values in it- #Note the 'I values' are read as a voltage here
 array_V  = array [1::2]# create an array with only the V values in it
-mapped_I=(array_I/np.amax(array_V))*3.3# We want the current mapped to the original voltage applied
-mapped_V= (array_V/np.amax(array_V))*3.3
+mapped_I=(array_I/4095)*3.3# We want the current mapped to the original voltage applied
+mapped_V= (array_V/4095)*3.3
 np.savetxt('Current',mapped_I)
 np.savetxt('Voltage', mapped_V)
